@@ -15,6 +15,18 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
   }
 
+  @IBOutlet weak var targetView: UIView!
+
+  @IBAction func tapStartAnimation(_ sender: Any) {
+    let animation = CABasicAnimation(keyPath: "cornerRadius")
+    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
+    animation.fromValue = 0
+    animation.toValue = 50
+    animation.duration = 1
+    targetView.layer.add(animation,forKey: "cornerRadius")
+    targetView.layer.cornerRadius = 20
+    
+  }
 
 }
 
